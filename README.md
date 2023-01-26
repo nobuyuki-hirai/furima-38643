@@ -1,24 +1,80 @@
-# README
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column             | Type   | Options              |
+| ------------------ | ------ | -------------------- |
+| nickname           | string | null, false          |
+| email              | string | null, false          |
+| password           | string | null, false          |
+| encrypted_password | string | null, false          |
+| last_name          | string | null, false          |
+| first_name         | string | null, false          |
+| last_name_kana     | string | null, false          |
+| first_name_kana    | string | null, false          |
+| birthday           | date   | null, false          |
 
-Things you may want to cover:
+### Association
 
-* Ruby version
+- has_many :items
+- has_one  :card_log
+- has_one  :buyer_address
 
-* System dependencies
+## itemsテーブル
 
-* Configuration
+| Column             | Type      | Options                        |
+| ------------------ | --------- | ------------------------------ |
+| title              | string    | null, false                    |
+| price              | string    | null, false                    |
+| concept            | text      | null, false                    |
+| category           | integer   | null, false                    |
+| condition          | integer   | null, false                    |
+| postage_payer      | integer   | null, false                    |
+| ship_area          | integer   | null, false                    |
+| ship_date          | integer   | null, false                    |
+| user               | refernces | null, false, foregin_key: true |
 
-* Database creation
+### Association
 
-* Database initialization
+- belongs_to :user
+- has_many   :images
+- has_one    :card
 
-* How to run the test suite
+## cardsテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+| Column | Type       | Options                    |
+| ------ | ---------- | -------------------------- |
+| card   | integer    | null, false                |
+| user   | references | null, false, foregin: true |
 
-* Deployment instructions
+### Association
 
-* ...
+- belongs_to :user
+- belongs_to :card
+- has_one    :buyer
+
+## imagesテーブル
+
+| Column | Type       | Options                    |
+| ------ | ---------- | -------------------------- |
+| image  | string     | null, false                |
+| item   | references | null, false, foregin: true |
+
+### Association
+
+- belongs_to :item
+
+## buyerテーブル
+
+| Column             | Type      | Options                        |
+| ------------------ | --------- | ------------------------------ |
+| post_code          | integer   | null, false                    |
+| prefectures        | integer   | null, false                    |
+| city               | string    | null, false                    |
+| address            | integer   | null, false                    |
+| build_name         | string    |                                |
+| phone_number       | integer   | null, false                    |
+| user               | refernces | null, false, foregin_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :card
