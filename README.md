@@ -45,7 +45,6 @@
 | address            | integer   | null, false                    |
 | build_name         | string    |                                |
 | phone_number       | string    | null, false                    |
-| user               | refernces | null, false, foregin_key: true |
 | buy                | refernces | null, false, foregin_key: true |
 
 ### Association
