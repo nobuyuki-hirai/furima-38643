@@ -39,7 +39,7 @@
 
 | Column             | Type      | Options                        |
 | ------------------ | --------- | ------------------------------ |
-| post_code          | integer   | null, false                    |
+| post_code          | string    | null, false                    |
 | prefectures        | integer   | null, false                    |
 | city               | string    | null, false                    |
 | address            | integer   | null, false                    |
