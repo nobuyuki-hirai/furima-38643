@@ -21,7 +21,6 @@
 | Column             | Type      | Options                        |
 | ------------------ | --------- | ------------------------------ |
 | title              | string    | null, false                    |
-| image              | string    | null, false                    |
 | price              | integer   | null, false                    |
 | concept            | text      | null, false                    |
 | category_id        | integer   | null, false                    |
