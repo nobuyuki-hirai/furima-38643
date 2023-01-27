@@ -18,17 +18,17 @@
 
 # itemsテーブル
 
-| Column             | Type      | Options                        |
-| ------------------ | --------- | ------------------------------ |
-| title              | string    | null, false                    |
-| price              | integer   | null, false                    |
-| concept            | text      | null, false                    |
-| category_id        | integer   | null, false                    |
-| condition_id       | integer   | null, false                    |
-| postage_payer_id   | integer   | null, false                    |
-| ship_area_id       | integer   | null, false                    |
-| ship_date_id       | integer   | null, false                    |
-| user               | refernces | null, false, foregin_key: true |
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| title              | string     | null, false                    |
+| price              | integer    | null, false                    |
+| concept            | text       | null, false                    |
+| category_id        | integer    | null, false                    |
+| condition_id       | integer    | null, false                    |
+| postage_payer_id   | integer    | null, false                    |
+| ship_area_id       | integer    | null, false                    |
+| ship_date_id       | integer    | null, false                    |
+| user               | references | null, false, foregin_key: true |
 
 ### Association
 
@@ -37,15 +37,15 @@
 
 ## buyerテーブル
 
-| Column             | Type      | Options                        |
-| ------------------ | --------- | ------------------------------ |
-| post_code_id       | string    | null, false                    |
-| ship_area_id       | integer   | null, false                    |
-| city               | string    | null, false                    |
-| address            | integer   | null, false                    |
-| build_name         | string    |                                |
-| phone_number       | string    | null, false                    |
-| buy                | refernces | null, false, foregin_key: true |
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| post_code_id       | string     | null, false                    |
+| ship_area_id       | integer    | null, false                    |
+| city               | string     | null, false                    |
+| address            | integer    | null, false                    |
+| build_name         | string     |                                |
+| phone_number       | string     | null, false                    |
+| buy                | references | null, false, foregin_key: true |
 
 ### Association
 
@@ -53,9 +53,9 @@
 
 ## buyテーブル
 
-| Column            | Type       | Options                        |
-| user              | refernces  | null, false, forgin_key: true  |
-| item              | refernces  | null, false, forgin_key: true  |
+| Column            | Type        | Options                        |
+| user              | references  | null, false, foregin_key: true  |
+| item              | references  | null, false, foregin_key: true  |
 
 ### Association
 
