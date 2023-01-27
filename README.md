@@ -42,7 +42,7 @@
 | post_code_id       | string     | null, false                    |
 | ship_area_id       | integer    | null, false                    |
 | city               | string     | null, false                    |
-| address            | integer    | null, false                    |
+| address            | string     | null, false                    |
 | build_name         | string     |                                |
 | phone_number       | string     | null, false                    |
 | buy                | references | null, false, foregin_key: true |
