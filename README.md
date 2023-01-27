@@ -15,37 +15,28 @@
 ### Association
 
 - has_many :items
-- has_one  :buyer_address
+- has_one  :buyer
+- has_one  :buy
 
 # itemsテーブル
 
 | Column             | Type      | Options                        |
 | ------------------ | --------- | ------------------------------ |
 | title              | string    | null, false                    |
-| price              | string    | null, false                    |
+| image              | string    | null, false                    |
+| price              | integer   | null, false                    |
 | concept            | text      | null, false                    |
-| category           | integer   | null, false                    |
-| condition          | integer   | null, false                    |
-| postage_payer      | integer   | null, false                    |
-| ship_area          | integer   | null, false                    |
-| ship_date          | integer   | null, false                    |
+| category_id        | integer   | null, false                    |
+| condition_id       | integer   | null, false                    |
+| postage_payer_id   | integer   | null, false                    |
+| ship_area_id       | integer   | null, false                    |
+| ship_date_id       | integer   | null, false                    |
 | user               | refernces | null, false, foregin_key: true |
 
 ### Association
 
 - belongs_to :user
-- has_many   :images
-
-## imagesテーブル
-
-| Column | Type       | Options                    |
-| ------ | ---------- | -------------------------- |
-| image  | string     | null, false                |
-| item   | references | null, false, foregin: true |
-
-### Association
-
-- belongs_to :item
+- has_one    :buy
 
 ## buyerテーブル
 
@@ -56,9 +47,23 @@
 | city               | string    | null, false                    |
 | address            | integer   | null, false                    |
 | build_name         | string    |                                |
-| phone_number       | integer   | null, false                    |
+| phone_number       | string    | null, false                    |
 | user               | refernces | null, false, foregin_key: true |
+| buy                | refernces | null, false, foregin_key: true |
 
 ### Association
 
 - belongs_to :user
+- belongs_to :buy
+
+## buyテーブル
+
+| Column            | Type       | Options                        |
+| user              | refernces  | null, false, forgin_key: true  |
+| item              | refernces  | null, false, forgin_key: true  |
+
+### Association
+
+- belongs_to :user
+- belongs_to :item
+- has_one    :buyer
