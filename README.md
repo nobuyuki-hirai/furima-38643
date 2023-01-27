@@ -39,8 +39,8 @@
 
 | Column             | Type      | Options                        |
 | ------------------ | --------- | ------------------------------ |
-| post_code          | string    | null, false                    |
-| prefectures        | integer   | null, false                    |
+| post_code_id       | string    | null, false                    |
+| ship_area_id       | integer   | null, false                    |
 | city               | string    | null, false                    |
 | address            | integer   | null, false                    |
 | build_name         | string    |                                |
