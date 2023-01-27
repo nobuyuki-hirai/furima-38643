@@ -28,7 +28,7 @@
 | postage_payer_id   | integer    | null, false                    |
 | ship_area_id       | integer    | null, false                    |
 | ship_date_id       | integer    | null, false                    |
-| user               | references | null, false, foregin_key: true |
+| user               | references | null, false, foreign_key: true |
 
 ### Association
 
@@ -45,7 +45,7 @@
 | address            | string     | null, false                    |
 | build_name         | string     |                                |
 | phone_number       | string     | null, false                    |
-| buy                | references | null, false, foregin_key: true |
+| buy                | references | null, false, foreign_key: true |
 
 ### Association
 
@@ -54,8 +54,8 @@
 ## buyテーブル
 
 | Column            | Type        | Options                        |
-| user              | references  | null, false, foregin_key: true  |
-| item              | references  | null, false, foregin_key: true  |
+| user              | references  | null, false, foreign_key: true  |
+| item              | references  | null, false, foreign_key: true  |
 
 ### Association
 
