@@ -15,7 +15,6 @@
 ### Association
 
 - has_many :items
-- has_one  :card_log
 - has_one  :buyer_address
 
 # itemsテーブル
@@ -36,20 +35,6 @@
 
 - belongs_to :user
 - has_many   :images
-- has_one    :card
-
-## cardsテーブル
-
-| Column | Type       | Options                    |
-| ------ | ---------- | -------------------------- |
-| card   | integer    | null, false                |
-| user   | references | null, false, foregin: true |
-| item   | references | null, false, foregin: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :item
 
 ## imagesテーブル
 
