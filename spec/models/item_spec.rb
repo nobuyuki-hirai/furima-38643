@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe Item, type: :model do
   before do
     @item = FactoryBot.build(:item)
-    
   end
 
   describe '新規投稿' do
@@ -24,54 +23,54 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Image can't be blank")
       end
       it 'titleが空だと投稿できない' do
-        @item.title = ""
+        @item.title = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Title can't be blank")
       end
       it 'conceptが空だと投稿できない' do
-        @item.concept = ""
+        @item.concept = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Concept can't be blank")
       end
       it 'category_idが空だと投稿できない' do
-        @item.category_id = ""
+        @item.category_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Category can't be blank")
       end
       it 'condition_idが空だと投稿できない' do
-        @item.condition_id = ""
+        @item.condition_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Condition can't be blank")
       end
       it 'postage_payer_idが空だと投稿できない' do
-        @item.postage_payer_id = ""
+        @item.postage_payer_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Postage payer can't be blank")
       end
       it 'ship_area_idが空だと投稿できない' do
-        @item.ship_area_id = ""
+        @item.ship_area_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Ship area can't be blank")
       end
       it 'ship_date_idが空だと投稿できない' do
-        @item.ship_date_id = ""
+        @item.ship_date_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Ship date can't be blank")
       end
       it 'priceは半角数値以外では投稿できない' do
-        @item.price = "１０００"
+        @item.price = '１０００'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price Half-width number.")
+        expect(@item.errors.full_messages).to include('Price Half-width number.')
       end
       it 'priceは¥299以下では登録できない' do
-        @item.price = "200"
+        @item.price = '200'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price Out of setting range")
+        expect(@item.errors.full_messages).to include('Price Out of setting range')
       end
       it 'priceは¥10,000,000以上では登録できない' do
-        @item.price = "10000001"
+        @item.price = '10000001'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price Out of setting range")
+        expect(@item.errors.full_messages).to include('Price Out of setting range')
       end
     end
   end
