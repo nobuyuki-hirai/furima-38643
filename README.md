@@ -27,7 +27,7 @@
 | condition_id       | integer    | null, false                    |
 | postage_payer_id   | integer    | null, false                    |
 | ship_area_id       | integer    | null, false                    |
-| ship_date_id       | integer    | null, false                    |
+| ship_day_id        | integer    | null, false                    |
 | user               | references | null, false, foreign_key: true |
 
 ### Association
