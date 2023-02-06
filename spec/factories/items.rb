@@ -7,7 +7,7 @@ FactoryBot.define do
     condition_id      { '2' }
     postage_payer_id  { '2' }
     ship_area_id      { '2' }
-    ship_date_id      { '2' }
+    ship_day_id      { '2' }
 
     association :user
 
