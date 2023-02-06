@@ -17,7 +17,7 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
   belongs_to :condition
-  belongs_to :postagepayer, optional: true
-  belongs_to :shiparea,     optional: true
-  belongs_to :shipdate,     optional: true
+  belongs_to :payer
+  belongs_to :area
+  belongs_to :day
 end
