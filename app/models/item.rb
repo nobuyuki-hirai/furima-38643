@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   validates :condition_id,     numericality: { other_than: 1, message: "can't be blank" }
   validates :postage_payer_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :ship_area_id,     numericality: { other_than: 1, message: "can't be blank" }
-  validates :ship_date_id,     numericality: { other_than: 1, message: "can't be blank" }
+  validates :ship_day_id,      numericality: { other_than: 1, message: "can't be blank" }
 
   belongs_to :user
   has_one_attached :image
