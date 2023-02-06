@@ -90,22 +90,22 @@ RSpec.describe Item, type: :model do
       it 'priceは半角数値以外では出品できない' do
         @item.price = '１０００'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price Half-width number.")
+        expect(@item.errors.full_messages).to include('Price Half-width number.')
       end
       it 'priceは¥299以下では出品できない' do
         @item.price = '200'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price Out of setting range")
+        expect(@item.errors.full_messages).to include('Price Out of setting range')
       end
       it 'priceは¥10,000,000以上では出品できない' do
         @item.price = '10000001'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price Out of setting range")
+        expect(@item.errors.full_messages).to include('Price Out of setting range')
       end
       it 'userが紐ついていないと出品できない' do
         @item.user = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("User must exist")
+        expect(@item.errors.full_messages).to include('User must exist')
       end
     end
   end
