@@ -38,7 +38,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Category can't be blank")
       end
       it 'category_idに「---」が選択されている場合は出品できない' do
-        @item.category_id = '---'
+        @item.category_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Category can't be blank")
       end
@@ -48,7 +48,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Condition can't be blank")
       end
       it 'condition_idに「---」が選択されている場合は出品できない' do
-        @item.condition_id = '---'
+        @item.condition_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Condition can't be blank")
       end
@@ -58,7 +58,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Postage payer can't be blank")
       end
       it 'postage_payer_idに「---」が選択されている場合は出品できない' do
-        @item.postage_payer_id = '---'
+        @item.postage_payer_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Postage payer can't be blank")
       end
@@ -68,7 +68,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Ship area can't be blank")
       end
       it 'ship_area_idに「---」が選択されている場合は出品できない' do
-        @item.ship_area_id = '---'
+        @item.ship_area_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Ship area can't be blank")
       end
@@ -78,7 +78,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Ship day can't be blank")
       end
       it 'ship_day_idに「---」が選択されている場合は出品できない' do
-        @item.ship_day_id = '---'
+        @item.ship_day_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Ship day can't be blank")
       end
