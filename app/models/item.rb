@@ -17,7 +17,7 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
   belongs_to :condition
-  belongs_to :payer, foreign_key: "postage_payer_id"
-  belongs_to :area,  foreign_key: "ship_area_id"
-  belongs_to :day,   foreign_key: "ship_day_id"
+  belongs_to :payer, foreign_key: 'postage_payer_id'
+  belongs_to :area,  foreign_key: 'ship_area_id'
+  belongs_to :day,   foreign_key: 'ship_day_id'
 end
