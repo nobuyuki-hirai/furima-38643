@@ -40,7 +40,7 @@
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | post_code          | string     | null, false                    |
-| ship_area_id       | integer    | null, false                    |
+| prefecture         | integer    | null, false                    |
 | city               | string     | null, false                    |
 | address            | string     | null, false                    |
 | build_name         | string     |                                |
