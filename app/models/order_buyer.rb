@@ -10,7 +10,7 @@ class OrderBuyer
   validates  :prefecture, numericality: {other_than: 0, message: "can't be blank"}
 
   def save
-    order = Order.create(customer_id: customer_id, user_id: user_id, item_id: item_id)
+    order = Order.create(user_id: user_id, item_id: item_id)
     Buyer.create(post_code: post_code, prefecture: prefecture, city: city, address: address, build_name: build_name, phone_number: phone_number, order_id: order.id)
   end
 end
