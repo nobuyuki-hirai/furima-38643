@@ -1,9 +1,11 @@
 class OrdersController < ApplicationController
   def index
+    @item = Item.find(params[:item_id])
     @order = Order.new
   end
 
   def create
+    binding.pry
     @order = Order.new(order_params)
     if @order.valid?
       @order.save
@@ -16,6 +18,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).merge(:user_id, :item_id)
+    params.require(:order)
   end
 end
