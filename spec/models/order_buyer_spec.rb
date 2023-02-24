@@ -48,7 +48,7 @@ RSpec.describe OrderBuyer, type: :model do
         @order_buyer.valid?
         expect(@order_buyer.errors.full_messages).to include("Phone number can't be blank")
       end
-      it "tokenが空では登録できないこと" do
+      it 'tokenが空では登録できないこと' do
         @order_buyer.token = nil
         @order_buyer.valid?
         expect(@order_buyer.errors.full_messages).to include("Token can't be blank")
@@ -56,12 +56,12 @@ RSpec.describe OrderBuyer, type: :model do
       it 'phone_numberが10桁未満では保存できないこと' do
         @order_buyer.phone_number = '123456789'
         @order_buyer.valid?
-        expect(@order_buyer.errors.full_messages).to include("Phone number PhoneNumber must be 10or11 digit Half-width numbers")
+        expect(@order_buyer.errors.full_messages).to include('Phone number PhoneNumber must be 10or11 digit Half-width numbers')
       end
       it 'phone_numberが11桁以上では保存できないこと' do
         @order_buyer.phone_number = '123456789000'
         @order_buyer.valid?
-        expect(@order_buyer.errors.full_messages).to include("Phone number PhoneNumber must be 10or11 digit Half-width numbers")
+        expect(@order_buyer.errors.full_messages).to include('Phone number PhoneNumber must be 10or11 digit Half-width numbers')
       end
       it 'userが紐付いていないと保存できないこと' do
         @order_buyer.user_id = nil
