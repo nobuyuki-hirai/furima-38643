@@ -4,6 +4,7 @@ RSpec.describe OrderBuyer, type: :model do
   describe ' 購入情報の保存' do
     before do
       user = FactoryBot.create(:user)
+      item = FactoryBot.create(:item)
       @order_buyer = FactoryBot.build(:order_buyer, user_id: user.id)
     end
 
