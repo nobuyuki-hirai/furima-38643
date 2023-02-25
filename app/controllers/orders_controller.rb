@@ -1,8 +1,8 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: :index
+  before_action :set_order, only: [:index, :create]
 
   def index
-    @item = Item.find(params[:item_id])
     @order_buyer = OrderBuyer.new
     return unless current_user == @item.user || @item.order.present?
 
@@ -10,7 +10,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @order_buyer = OrderBuyer.new(order_params)
     if @order_buyer.valid?
       pay_item
@@ -27,6 +26,10 @@ class OrdersController < ApplicationController
     params.require(:order_buyer).permit(:post_code, :prefecture, :city, :address, :build_name, :phone_number, :token, :item_id).merge(
       user_id: current_user.id, item_id: params[:item_id], token: params[:token]
     )
+  end
+
+  def set_order
+    @item = Item.find(params[:item_id])
   end
 
   def pay_item
