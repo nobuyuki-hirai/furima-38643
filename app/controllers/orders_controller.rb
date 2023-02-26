@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    binding.pry
     @order_buyer = OrderBuyer.new(order_params)
     if @order_buyer.valid?
       pay_item
@@ -23,7 +24,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order_buyer).permit(:post_code, :prefecture, :city, :address, :build_name, :phone_number, :token, :item_id).merge(
+    params.require(:order_buyer).permit(:post_code, :prefecture, :city, :address, :build_name, :phone_number).merge(
       user_id: current_user.id, item_id: params[:item_id], token: params[:token]
     )
   end
