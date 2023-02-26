@@ -3,9 +3,10 @@ require 'rails_helper'
 RSpec.describe OrderBuyer, type: :model do
   describe ' 購入情報の保存' do
     before do
-      user = FactoryBot.create(:user)
       item = FactoryBot.create(:item)
-      @order_buyer = FactoryBot.build(:order_buyer, user_id: user.id)
+      user = FactoryBot.create(:user)
+      @order_buyer = FactoryBot.build(:order_buyer, user_id: user.id, item_id: item.id)
+      sleep(1)
     end
 
     context '内容に問題ない場合' do
@@ -61,6 +62,11 @@ RSpec.describe OrderBuyer, type: :model do
       end
       it 'phone_numberが11桁以上では保存できないこと' do
         @order_buyer.phone_number = '123456789000'
+        @order_buyer.valid?
+        expect(@order_buyer.errors.full_messages).to include('Phone number PhoneNumber must be 10or11 digit Half-width numbers')
+      end
+      it 'phone_numberに半角数字以外が含まれている場合は保存できない' do
+        @order_buyer.phone_number = '０８０９７８６１９２８'
         @order_buyer.valid?
         expect(@order_buyer.errors.full_messages).to include('Phone number PhoneNumber must be 10or11 digit Half-width numbers')
       end
