@@ -60,7 +60,7 @@ RSpec.describe OrderBuyer, type: :model do
         @order_buyer.valid?
         expect(@order_buyer.errors.full_messages).to include('Phone number PhoneNumber must be 10or11 digit Half-width numbers')
       end
-      it 'phone_numberが11桁以上では保存できないこと' do
+      it 'phone_numberが12桁以上では保存できないこと' do
         @order_buyer.phone_number = '123456789000'
         @order_buyer.valid?
         expect(@order_buyer.errors.full_messages).to include('Phone number PhoneNumber must be 10or11 digit Half-width numbers')
