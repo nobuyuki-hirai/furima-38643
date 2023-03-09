@@ -39,6 +39,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'date', '~> 3.3.3'
 end
 
 group :development do
